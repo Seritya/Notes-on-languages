@@ -6,31 +6,70 @@ Source: https://www.freecodecamp.com/map (HTML5 and CSS challenge)
 ================================
 --->
 
-Style of text:
+Style of text, images or sections:
+==============
  = Inline: <h2 style="color: blue">Text</h2>
  = Handle style in on go on the top of your page (called CSS): 
-    <style>                
-      h2 {color: red;}    | Important: opening and closing curly braces ({ and }) around each element's style
-    </style>              | and each element ends with semicolon.
- = Creat classes (Formatvorlagen)  
-    <style>
-      .blue-text {        | Make sure, classes start with a period.
-        color: blue;      
-      }                    ==> <h2 class="blue-text">CatPhotoApp</h2>
+   - <style>                
+      h2 {color: red;}                | Important: opening and closing curly braces ({ and }) around each element's style
+     </style>                         | and each element ends with semicolon.
+   - Creat classes (Formatvorlagen)  
+     <style>
+      .blue-text {color:blue;}        | Make sure, classes start with a period and elements end with semicolon.
+     </style> 
+      ==> <h2 class="blue-text">CatPhotoApp</h2>
+ 
+ = give elements an id, then style id: <img id="made-up-name-that's-unique-to-this-item">
+     <style>
+       #made-up-name-that's-unique-to-this-item {background-color: green;}
+     </style>
+     
+
+ = Examples: color:blue; font-size: 30px; font-family: sans-serif; background-color: green;
+
+<!-- Schriftarten über Google importieren (Monospace ist "Reserve", falls Lobster nicht geht.) -->
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+  <style>
+    h2 {font-family: Lobster, Monospace;}
+  </style>
+
+Images:
+=======
+ = Add image: <img src="https://www.your-image-source.com/your-image.jpg" alt="Author standing on a beach with two thumbs up. ">
+              "alt" ist sehr wichtig als Unterstützung für Vorlese-Programme. Es beschreibt das Bild.
+ = Style image like text in classes: <style>.larger-image {width: 500px;}</style>
+ = round image: <style>.round-image {border-radius: 50%}</style>
+              
+              
+Borders and margins:
+====================
+  <style>.thin-red-border{border-color: red; border-width: 5px; border-style: solid; border-radius: 10px[oder]10%;}</stlye>
   
-      h1 {
-        font-size: 30px;
-      }
-   </style>
-
-<!-- Import font from Google, Set Font Family as Lobster, Monospace ist "Reserve", falls Lobster nicht geht. -->
-
-<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-<style>
-  .red-text {
-    color: red;
-  }
-
-  h2 {
-    font-family: Lobster, Monospace;
-  }
+  
+Anchor elements like to sources outside the page:
+=================================================
+  = <p>Here's a <a href="http://freecodecamp.com"> link to Free Code Camp</a> for you to follow.</p>
+  = Tote Links mit # ersetzen
+  = Bilder als Links einsetzen: <a href="#"><img src="https://bit.ly/fcc-running-cats" alt="Three kittens. "></a>
+  
+  
+Listen und Knöpfe:
+==================
+  = Bullet-Listen (unordred lists): <ul><li>Punkt 1</li><li>Punkt 2</li></ul>
+  = Nummerierte Listen (ordred l.): <ol><li>Nummer1</li><li>Nummer2</li></ol>
+  = Radio-Buttons: <label><input type="radio" name="indoor-outdoor" checked> entweder (schon ausgewählt) </label>
+                   <label><input type="radio" name="indoor-outdoor"> oder </label>
+  = Check-Boxes:   <label><input type="checkbox" name="personality" checked> Auswahl 1 (schon ausgewählt) </label>
+                   <label><input type="checkbox" name="personality"> Auswahl 2 </label>
+  
+Ausfüllbares Textfeld:
+======================
+  = Textfeld erstellen <input type="text"> Plus Placeholder: <input type="text" placeholder="cat photo URL">
+  = Inhalt einreichen <form action="/url-where-you-want-to-submit-form-data"></form>
+  = Submit-Button <button type="submit">Text on Button</button>
+  = required field: <input type="text" required>
+              
+Felder:
+=======
+  = <Form></Form> --> alle Textfelder, Checkboxes usw. in diesem Feld werden über denselben Submit-Button gesteuert
+  = <div></div>   --> erstellt ein Feld, dessen Format gesammelt gesteuert werden kann.
