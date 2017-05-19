@@ -6,32 +6,41 @@ Source: https://www.freecodecamp.com/map (HTML5 and CSS challenge)
 ================================
 --->
 
-Style of text, images or sections:
-==============
+Style of text, body, images or sections:
+========================================
  = Inline: <h2 style="color: blue">Text</h2>
  = Handle style in on go on the top of your page (called CSS): 
    - <style>                
       h2 {color: red;}                | Important: opening and closing curly braces ({ and }) around each element's style
-     </style>                         | and each element ends with semicolon.
+      body {background-color: black;} | and each element ends with semicolon.
+     </style>                         
    - Creat classes (Formatvorlagen)  
      <style>
       .blue-text {color:blue;}        | Make sure, classes start with a period and elements end with semicolon.
      </style> 
       ==> <h2 class="blue-text">CatPhotoApp</h2>
- 
- = give elements an id, then style id: <img id="made-up-name-that's-unique-to-this-item">
+  = give elements an id, then style id: <img id="made-up-name-that's-unique-to-this-item">
      <style>
        #made-up-name-that's-unique-to-this-item {background-color: green;}
      </style>
-     
+   
+ = Examples: color:blue; font-size: 30px; font-family: sans-serif; background-color: green; text-align: cnter;
 
- = Examples: color:blue; font-size: 30px; font-family: sans-serif; background-color: green;
+ --> Hierarchie: Body < class < class that stands "later" < ID < in-line style < !important
 
 <!-- Schriftarten über Google importieren (Monospace ist "Reserve", falls Lobster nicht geht.) -->
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
   <style>
     h2 {font-family: Lobster, Monospace;}
   </style>
+
+Colors:
+=======
+ = Hex code: two digits per RGB, numbers from 01 to FF (red=#ff0000, green=#00ff00, blue=#0000ff, black=00000))
+   Hex: 01,02,03,04,05,06,07,08,09,0a,0b,0c,0d,0e,0f,10,11,12,13,14,15,16,17,18,19,1a....
+ = Short Hex: green="#0F0", red="#F0F"...
+ = rgb values: black=rgb(0, 0, 0) white=rgb(255, 255, 255), Orchid=rgb(218, 112, 214)
+ 
 
 Images:
 =======
@@ -41,9 +50,14 @@ Images:
  = round image: <style>.round-image {border-radius: 50%}</style>
               
               
-Borders and margins:
+Borders, padding and margins:
 ====================
-  <style>.thin-red-border{border-color: red; border-width: 5px; border-style: solid; border-radius: 10px[oder]10%;}</stlye>
+  = <style>.thin-red-border{border-color: red; border-width: 5px; border-style: solid; border-radius: 10px[oder]10%;}</stlye>
+  = Padding=space between element and its border. <style>.not-much-padding{padding: 5px;}
+  = Margin=space between border and surrounding elements. Same code, can be negative.
+  = indivudual padding/margin for each side of the element:
+    - padding-top: 10px; padding-right usw. / margin-top: 10px usw.
+    - clockwise notation: padding: 10px 20px 10px 20px;
   
   
 Anchor elements like to sources outside the page:
