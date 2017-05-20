@@ -8,6 +8,8 @@ Basics
 = MessageBox.Show("Text", "Title", MessageBoxButtons.x, MessageBoxIcon.x) OR (1+1 etc --> Calculator)
   Will be triggered by a button e.g. when added to the code with a double click on the item
 
+= Make TextBoxes Multiline: small arrow thing topleft of the TB
+
 = Count with a progress bar: ProgressBar1.Value=ProgressBar1.Value + 1
 
 = Add to a listbox: (Tools needed: Textbox, Button, Listbox)
@@ -34,8 +36,26 @@ Basics
 
 = Start exe: Process.start("C:\file.exe")
 
-Varibales and Calls:
-====================
+= make programm type text: SendKeys.send(TextBox1.text) / SendKeys.Send("Text") / SendKeys.Send("{Enter}")
+
+= repeat commands with a timer (see below)
+
+= delete stuff in Textboxes: TextBox1.clear
+
+= Split string of text
+  a) split(TextBox1.text, TextBox2.text) [TB1 being the string and TB2 being the letter to divide by]
+  b) TextBox1.text.split(TextBox2.text)   z.B.: split("Hello&World", &)
+  
+= Get computer information: My.Computer.Auswahlmenü / My.User.Auswahlmenü
+
+= Catch code that could crash: Try
+                                Code
+                                Catch ex as exception
+                                MessageBox.show(ex.Message)
+                               EndTry
+
+Varibales, Calls and Arrays:
+============================
 = Define a variable:  Dim [Name of var.] As String = "txt"
                       Dim [Name of var.] As Integer = Nr.
   --> can be used to store larger stuff in a code word and call it by that
@@ -46,6 +66,11 @@ Varibales and Calls:
                       End Sub
                 
                   --> Call [Name of code]()
+     
+ = Create Array:  Dim NameOfArray(AmountOfItems) as string
+                  NameOfArray(0)="NameOfItem1"
+                  NameOfArray(1)="NameOfItem2"
+                  --> Call: MessageBox.Show(NameOFArray(NumberOfItem))
 
 If/Then/Elseif:
 ===============
@@ -102,10 +127,10 @@ Timers:
     - Textbox Text "1" (via properties)
     - Interval wird über Properties gesteuert, nicht über Code
     ---> Interval 1000 = 1 sek
-    - oder über TextBox-Eingabe: Timer1.Interval = Textbox2
     - Code:
         auf Timer: TextBox1.text = TextBox1.text + 1
         auf Buttons: Timer1.start / timer1.stop
+ = Set interval via form: Timer1.Interval = Textbox2
         
 
 Webbrowser:
@@ -113,3 +138,29 @@ Webbrowser:
  = Add over Toolbox
  =  webbrowser1.navigate (Textbox1.text[URL])
 webbrowser1.goback/.refresh/.goforward
+
+
+Settings:
+=========
+ = Use settings to let users change things the program will remember (like usernames).
+ --> Solution explorer / rightclick on form / properties / settings
+     - Set name to call by
+     - Set starting value (to be changed via the exe)
+ = to refer to setting: label1.text=my.settings.NameOfSetting
+ = to change in exe: my.settings.NameOfSetting=TextBox1.text
+ = use in text: "Text" & NameOfSetting
+ 
+ Combine with .txt files:
+ ========================
+ = Make programm read Textfile:         Dim [NameOfStreamreader] as New.System.IO.StreamReader(c:\file.txt.)
+ = Make it show content of such: [add]  TextBox1.Text=objreader.ReadtoEnd   
+                                        Objreader.close()
+ = Create .txt file with content of TB: Dim [NameOfStreamwriter] as New.System.IO.StreamWriter("Filename")
+                                        Dim name.write(TextBox1.text)
+                                        
+ OpenFileDialog:
+ ===============
+ = Steuerbar über Properties
+ = Auswählbar, welche Dateiendungen angezeigt werden (Nur txt files oder nur doc files usw.)
+ = Hilfe ganz unten im Fenster
+ = Auswählbar, welcher Ordner Startpunkt ist.
