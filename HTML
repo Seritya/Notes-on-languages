@@ -24,7 +24,7 @@ Style of text, body, images or sections:
        #made-up-name-that's-unique-to-this-item {background-color: green;}
      </style>
    
- = Examples: color:blue; font-size: 30px; font-family: sans-serif; background-color: green; text-align: cnter;
+ = Examples: color:blue; font-size: 30px; font-family: sans-serif; background-color: green; text-align: center;
 
  --> Hierarchie: Body < class < class that stands "later" < ID < in-line style < !important
 
@@ -75,7 +75,7 @@ Listen und Knöpfe:
                    <label><input type="radio" name="indoor-outdoor"> oder </label>
   = Check-Boxes:   <label><input type="checkbox" name="personality" checked> Auswahl 1 (schon ausgewählt) </label>
                    <label><input type="checkbox" name="personality"> Auswahl 2 </label>
-  
+                   
 Ausfüllbares Textfeld:
 ======================
   = Textfeld erstellen <input type="text"> Plus Placeholder: <input type="text" placeholder="cat photo URL">
@@ -87,3 +87,24 @@ Felder:
 =======
   = <Form></Form> --> alle Textfelder, Checkboxes usw. in diesem Feld werden über denselben Submit-Button gesteuert
   = <div></div>   --> erstellt ein Feld, dessen Format gesammelt gesteuert werden kann.
+
+Responsive Design (Bootstrap):
+==============================
+  = Design passt sich automatisch der Bildschirmbreite an.
+  = In den header: <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+  = alles in ein div element mit der Klasse "Container fluid" packen: <div class="container-fluid"></div>
+  = Width of the screen: class="img-responsive"
+  = New classes for format: Zentrierter Text class="text-center"
+                            Button class="btn" --> As wide as the text they contain
+                            Button class="btn btn-block" --> As wide as the screen
+                            Button colours class="btn button-primary / button-info / button-danger" 
+                            --> Color for actions users should or shouldn't take
+                            Text colours class="text primary"
+  = Spread stuff on the width of a screen:
+    - Put everything in a one <div class="row"> element, then each of them within a <div class="col-xs-4">
+    - xs means it's a small phone screen
+    - 4 is the number of columns it should take
+    
+    
+==> stopped here: https://www.freecodecamp.com/challenges/use-spans-for-inline-elements
+    
