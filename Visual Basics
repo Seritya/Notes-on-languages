@@ -158,9 +158,12 @@ Settings:
  = Create .txt file with content of TB: Dim [NameOfStreamwriter] as New.System.IO.StreamWriter("Filename")
                                         Dim name.write(TextBox1.text)
                                         
- OpenFileDialog:
- ===============
+ OpenFileDialog / SaveFileDialog:
+ ================================
+ = OpenFileDialog1.ShowDialog() bzw. SaveFileDialog1.ShowDialog()
  = Steuerbar über Properties
  = Auswählbar, welche Dateiendungen angezeigt werden (Nur txt files oder nur doc files usw.)
  = Hilfe ganz unten im Fenster
  = Auswählbar, welcher Ordner Startpunkt ist.
+ 
+ ==> Tutorials aufgehört bei: http://howtostartprogramming.com/vb-net/vb-net-tutorial-47-get-elements-by-tag-name/
