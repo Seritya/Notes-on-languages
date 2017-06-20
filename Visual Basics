@@ -10,6 +10,8 @@ Basics
 
 = Make TextBoxes Multiline: small arrow thing topleft of the TB
 
+= Zeilenumbruch der bei der Programmierung keine Rolle spielt: _
+
 = Count with a progress bar: ProgressBar1.Value=ProgressBar1.Value + 1
 
 = Add to a listbox: (Tools needed: Textbox, Button, Listbox)
@@ -83,8 +85,11 @@ If/Then/Elseif:
               Elseif x then       | Falls ein Entweder/Oder gewünscht ist, dann zwei separate If/Then machen
                 action            | Else = in jedem anderen Fall
               endif               | Elseif = in einem bestimmten anderen Fall
+              
+= AndAlso     If IsNumeric(tb1.text) AndAlso tb1.text >= 30 AndAlso tb1.text <=240 then...
   
 = Add If based on a decision on a MessageBox: Windows.Forms.dialog.Result.yes then xy
+= If Input must be number: if IsNumeric(textbox1.text) then...
 
 Loops:
 ======
@@ -119,6 +124,7 @@ Listen und Knöpfe:
             If Checkbox2.checked = True then
               MessageBox.show("txt")
             Endif  
+ = Radiobuttons/Checkboxes bereits vorauswählen: über Eigenschaften "Checked"= True
             
 Timers:
 =======
@@ -139,6 +145,12 @@ Webbrowser:
  =  webbrowser1.navigate (Textbox1.text[URL])
 webbrowser1.goback/.refresh/.goforward
 
+Pictures:
+=========
+ = .bmp Format benützen
+ = Picturebox aus Toolbox
+ = Add picture to ressources: obere Navigationsliste / Projekt / xy-Eigenschaften / Ressourcen / Ressource hinzufügen
+ = Call picture: über Click auf Button: picturebox.Image = My.Resources.NameDesBildes
 
 Settings:
 =========
