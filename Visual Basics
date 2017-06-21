@@ -29,6 +29,9 @@ Basics
                  SAPI=CreateObject("SAPI.spvoice")
                  SAPI.Speak(Textbox1.text)
                  SAPI.Speak("xy")
+                 ODER
+                 Dim sp as New System.Speech.Synthesis.SpeechSynthesizer
+                 Sp.Speak("Text")
               
 = Integrate variable in Text with &: ("The amount is" & x)
 
@@ -60,6 +63,9 @@ Varibales, Calls and Arrays:
 ============================
 = Define a variable:  Dim [Name of var.] As String = "txt"
                       Dim [Name of var.] As Integer = Nr.
+                      Dim [Name of var.] As Short = ?
+                      Dim [Name of var.] As Single = ?
+                      Dim [Name of var.] As Icon = Icon...
   --> can be used to store larger stuff in a code word and call it by that
 
 = Store code and call by that name (zw. "public class form" und "private sub")
@@ -90,6 +96,14 @@ If/Then/Elseif:
   
 = Add If based on a decision on a MessageBox: Windows.Forms.dialog.Result.yes then xy
 = If Input must be number: if IsNumeric(textbox1.text) then...
+
+Cases:
+======
+ = Verschiedene Szenarien angeben
+ = Select Case BMI (BMI zuvor definiert als Short und oberhalb Formel BMI = Gewicht / (Groesse / 100)  ^2)
+     Case is < 20
+       tb1.text = "Untergewicht" usw.
+   End Select
 
 Loops:
 ======
@@ -147,20 +161,41 @@ webbrowser1.goback/.refresh/.goforward
 
 Pictures:
 =========
- = .bmp Format benützen
+ = .bmp Format benützen (oder .ico = Icons, die eigentlich auch Bitmaps sind. Glaubs...)
  = Picturebox aus Toolbox
  = Add picture to ressources: obere Navigationsliste / Projekt / xy-Eigenschaften / Ressourcen / Ressource hinzufügen
  = Call picture: über Click auf Button: picturebox.Image = My.Resources.NameDesBildes
+ = Grösse anpassen: SizeMode-Eigenschaft auf "StretchImage"
+ = um in der Anwendung verwendete Bilder zu speichern über den Projektmappenexplorer mit Rechtklick auf das
+   Projekt einen neuen Ordner erstellen und die Bilder dort ablegen (ersetzt nicht den Ressourcen-Schritt)
+
+Audio:
+======
+ = .wav verwenden
+ = Add audio to ressources: obere Navigationsliste / Projekt / xy-Eigenschaften / Ressourcen / Ressource hinzufügen
+ = My.Computer.Audio.Play("Name.wav[Dateipfad]"), AudioPlayMode.WaitToComplete)
+   ODER
+   My.Computer.Audio.Play(My.Resources.Name, AudioPlayMode.WaitToComplete)
 
 Settings:
 =========
+ = Voreingestellte Werte: Doppelklick auf das ganze Fenster führt zum Form_Load-Prozess
+   tb1.text = "Hier Wert eingeben"
+   rb1.Checked = true
+   ODER
+   If My.Settings.NameDesSettings <> 0 then
+    tb1.text = My.Settings.NameDesSettings
+   Else
+    tb.text = "Hier Wert eingeben"
+   End If
  = Use settings to let users change things the program will remember (like usernames).
  --> Solution explorer / rightclick on form / properties / settings
      - Set name to call by
      - Set starting value (to be changed via the exe)
  = to refer to setting: label1.text=my.settings.NameOfSetting
- = to change in exe: my.settings.NameOfSetting=TextBox1.text
+ = to change in exe: (am besten über FormClosing) my.settings.NameOfSetting = TextBox1.text
  = use in text: "Text" & NameOfSetting
+ = Falls Settings nicht gespeichert werden: My.Settings.Save()
  
  Combine with .txt files:
  ========================
