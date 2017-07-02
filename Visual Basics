@@ -16,6 +16,8 @@ Bedienung:
 
 Basics
 ========================
+= Show Form centered when debugging: Properties/StartPosition
+
 = MessageBox.Show("Text", "Title", MessageBoxButtons.x, MessageBoxIcon.x) OR (1+1 etc --> Calculator)
   Will be triggered by a button e.g. when added to the code with a double click on the item
 
