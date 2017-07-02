@@ -29,14 +29,14 @@ Basics
 
 = Count with a progress bar: ProgressBar1.Value=ProgressBar1.Value + 1
 
-= Add to a listbox: (Tools needed: Textbox, Button, Listbox)
-            Listbox.Items.Add (TextBox1.text)
-            --> Adds what's in the Textbox to a list
+= Count manually in exe: DomainUpDown (erstellt Box mit Pfeilen nach oben und unten)
 
 = Add Menustrip (Datei, Help usw.) via Toolbox and commands on the strip via dropdown.
   Actions are added with double click on the command (as usual)
   
 = code for closing the application: me.close()
+
+= Reihenfolge für den Tabstop: Ansicht/Aktivierreihenfolge
 
 = Add new form: top right "Solution Explorer" --> right click on project / add / WindowsForm
           
@@ -146,6 +146,11 @@ Listen und Knöpfe:
               MessageBox.show("txt")
             Endif  
  = Radiobuttons/Checkboxes bereits vorauswählen: über Eigenschaften "Checked"= True
+ 
+ = Add to a listbox: (Tools needed: Textbox, Button, Listbox)
+            Listbox.Items.Add (TextBox1.text)
+            --> Adds what's in the Textbox to a list
+ = Listbox mit Checkboxes = CheckedListBox (fügt jedem Listeneintrag eine Checkbox hinzu)
             
 Timers:
 =======
