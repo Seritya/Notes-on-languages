@@ -3,12 +3,25 @@
 'Sources: Howtostartprogramming.com
 '===================================
 
+
+Bedienung:
+==========
+= Debug: F5
+= Zum Code umschalten: F7
+= Eigenschaften: Element anwählen und F4
+= Haltepunkt in den Code setzen: mit der Maus auf den Punkt und F9 (entfernen gleich)
+= Code markieren und auf die Toolbox ziehen erstellt eine Zwischenablage
+= Zeilenumbruch einschalten: Extras/Optionen/Text-Editor Basic/Editor/Interaktion
+= Eigene Tastenkombinationen zuweisen: Extras/Optionen/Alle Einstellungen anzeigen (unten)/Umgebung/Tastatur
+
 Basics
 ========================
 = MessageBox.Show("Text", "Title", MessageBoxButtons.x, MessageBoxIcon.x) OR (1+1 etc --> Calculator)
   Will be triggered by a button e.g. when added to the code with a double click on the item
 
 = Make TextBoxes Multiline: small arrow thing topleft of the TB
+
+= Elemente anordnen über "Format" in der Symbolleiste (nur sichtbar, wenn das Formular offen ist)
 
 = Zeilenumbruch der bei der Programmierung keine Rolle spielt: _
 
@@ -24,15 +37,7 @@ Basics
 = code for closing the application: me.close()
 
 = Add new form: top right "Solution Explorer" --> right click on project / add / WindowsForm
-
-= Text-to-speak: Dim SAPI
-                 SAPI=CreateObject("SAPI.spvoice")
-                 SAPI.Speak(Textbox1.text)
-                 SAPI.Speak("xy")
-                 ODER
-                 Dim sp as New System.Speech.Synthesis.SpeechSynthesizer
-                 Sp.Speak("Text")
-              
+          
 = Integrate variable in Text with &: ("The amount is" & x)
 
 = Passwords in Textboxes as *** : Properties PasswordChar= *
@@ -176,6 +181,14 @@ Audio:
  = My.Computer.Audio.Play("Name.wav[Dateipfad]"), AudioPlayMode.WaitToComplete)
    ODER
    My.Computer.Audio.Play(My.Resources.Name, AudioPlayMode.WaitToComplete)
+ = Text-to-speak: Dim SAPI
+                 SAPI=CreateObject("SAPI.spvoice")
+                 SAPI.Speak(Textbox1.text)
+                 SAPI.Speak("xy")
+                 ODER [Funktioniert nicht, auch nicht nach dem Import der Bibliothek]
+                 Dim sp as New System.Speech.Synthesis.SpeechSynthesizer
+                 Sp.Speak("Text")
+ = Import der Bibliothek: Projekt/Verweis hinzufügen/Register "COM"/Microsoft Speech Object Library
 
 Settings:
 =========
