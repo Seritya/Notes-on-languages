@@ -2,7 +2,7 @@
 
 Started HTML 2017/05/15
 ================================
-Source: https://www.freecodecamp.com/map (HTML5 and CSS challenge / Responsive design with bootstrap)
+Source: https://www.freecodecamp.com/map (HTML5 and CSS challenge / Responsive design with bootstrap/jQuery)
 ================================
 --->
 
@@ -115,6 +115,31 @@ Font awesome:
   = In den header: <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
   = add icon to a button: <button class="btn btn-block btn-primary"><i class="fa fa-thumbs-up">Like</i></button>
   = Icons: fa fa-info-circle, fa fa-thumbs-up, fa fa-trash, fa fa-paper-plane (more: http://fontawesome.io/icons/)
-
-
+  
+jQuery:
+=======
+  = Add the following to the top of your code:
+      <script> $(document).ready(function() {
+      }); </script>
+  = The added commands belong into the {}
+  = You target stuff with a "bling" ($)
+  = There are three ways of targeting elements: by type: $("button"), by class: $(".btn"), and by id $("#target1").
+  = Example:
+    $("button").addClass("animated bounce");       targets a type and makes it bounce
+    $(".well").addClass("animated shake");         targets a class and makes it shake
+    $("#target3").addClass("animated fadeOut");    targets an id and makes it fade out
+    $("button").removeClass("btn-default");        removes a class from an object
+    $("#target1").css("color", "red");             targets the css of an object and makes it red
+    $("#target1").prop("disabled", true)           sets the props of the button to disabled
+    $("h3").html("<em>jQuery Playground</em>");    emphasizes the h3 element
+    $("h3").text("jQuery Playground");             Alters Text without adding tags
+    $("#target4").remove()                         Removes an element
+    $("#target4").appendTo("#right-well")          Moves object to another well
+    $("#target4").clone().appendTo("#right-well")  Copies object to another well
+    $("#target1").parent()                         Targets the parent (the element higher in hierarchy)
+    $("#right-well").children()                    Targets the children (elements which inherit props from them)
+    $(".target:nth-child(3)").addClass(xy)         Targets the nth child (here the 3th child)
+    $(".target:odd").addClass("animated shake");   Targets odd targets (jQuery starts to count at 0, so 2.,4.,6., are odd)
+    $(".target:even").addClass("animated shake");  Same
+    $("body").addClass("animated hinge");          Targets whole body (=everything) and makes it hinge on the topleft corner ^^
     
