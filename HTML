@@ -8,6 +8,9 @@ Source: https://www.freecodecamp.com/map (HTML5 and CSS challenge / Responsive d
 
 Style of text, body, images or sections:
 ========================================
+ = <p></p> as definition for a paragraph
+ = <br /> (alt) <br> (neu) Umbruch erzwingen
+ = <hr /> (alt) <hr> (neu) Horizontale Linie (horizontal ruler)
  = Inline: <h2 style="color: blue">Text</h2>
  = Handle style in on go on the top of your page (called CSS): 
    - <style>                
@@ -46,7 +49,10 @@ Images:
 =======
  = Add image: <img src="https://www.your-image-source.com/your-image.jpg" alt="Author standing on a beach with two thumbs up. ">
               "alt" ist sehr wichtig als Unterstützung für Vorlese-Programme. Es beschreibt das Bild.
- = Style image like text in classes: <style>.larger-image {width: 500px;}</style>
+   ODER: Bild im selben Ordner wie das html speicher und dann <img src="html-seminar.jpg">
+   ODER mit Unterordner <img src="bilder/html-seminar.jpg">
+ = Style image like text in classes: <style>.larger-image {width: 500px; height: 30px;}</style>
+ = Style right there: <img src="bilder/html-seminar.jpg" width="474" height="66" alt="jetzt HTML lernen">
  = round image: <style>.round-image {border-radius: 50%}</style>
               
               
@@ -71,6 +77,7 @@ Listen und Knöpfe:
 ==================
   = Bullet-Listen (unordred lists): <ul><li>Punkt 1</li><li>Punkt 2</li></ul>
   = Nummerierte Listen (ordred l.): <ol><li>Nummer1</li><li>Nummer2</li></ol>
+  = Definitionslisten (definition l.): <dl><dt>Definition Term</dt><dd>Definition Description</dd></dl>
   = Radio-Buttons: <label><input type="radio" name="indoor-outdoor" checked> entweder (schon ausgewählt) </label>
                    <label><input type="radio" name="indoor-outdoor"> oder </label>
   = Check-Boxes:   <label><input type="checkbox" name="personality" checked> Auswahl 1 (schon ausgewählt) </label>
