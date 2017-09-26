@@ -1,0 +1,22 @@
+
+Responsive Design (Bootstrap):
+==============================
+  = Design passt sich automatisch der Bildschirmbreite an.
+  = In den header: <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+  = alles in ein div element mit der Klasse "Container fluid" packen: <div class="container-fluid"></div>
+  = Width of the screen: class="img-responsive"
+  = New classes for format: Zentrierter Text class="text-center"
+                            Button class="btn" --> As wide as the text they contain
+                            Button class="btn btn-block" --> As wide as the screen
+                            Button class="btn btn-default"
+                            Button colours class="btn button-primary / button-info / button-danger" 
+                            --> Color for actions users should or shouldn't take
+                            Text colours class="text primary"
+                            class="well" creates depth to an element
+  = Spread stuff on the width of a screen:
+    - Put everything in a one <div class="row"> element, then each of them within a <div class="col-xs-4">
+    - xs means it's a small phone screen, md is a medium laptop screen
+    - 4 is the number of columns it should take
+    - can also be used for buttons and check boxes
+  = Use other format for just part of it:  <p>Things cats <span class="text-danger">love:</span></p>
+  = 
