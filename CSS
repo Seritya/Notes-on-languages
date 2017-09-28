@@ -57,3 +57,28 @@ Borders, padding and margins:
   = indivudual padding/margin for each side of the element:
     - padding-top: 10px; padding-right usw. / margin-top: 10px usw.
     - clockwise notation: padding: 10px 20px 10px 20px;
+    
+ID
+==
+Name elements with ID is super helpfull, as you can address subcategories per ID!
+Example: 
+HTML:
+<nav id="steuerung" role="navigation">
+  <ul>
+    <li><a href="de_1_Ueber-mich.html">&Uuml;ber mich</a></li>
+  </ul>
+</nav>
+
+CSS:
+#steuerung li 
+  {list-style: none;
+   float: left;}
+
+#steuerung a 
+  {display: block;
+   font-family:calibri;}
+
+Change with Mouse hoovering: 
+#steuerung a:hover 
+  {color: black;
+   background: #f1e8d4;}
