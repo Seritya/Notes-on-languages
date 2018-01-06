@@ -18,7 +18,7 @@ Summary
     clear     clear will clean up your terminal.
     cd        Use the cd command to change your working directory.
     pwd       The pwd command will print the working directory.
-    ls        The ls command will list files and folders in a directory.
+    ls        The ls command will list files and folders in a directory. You can use * to list (e.g. *.jpg, *DSC* or 2017*)
     
     Create, change or show folders and files
     ==========================
@@ -34,8 +34,12 @@ Summary
               then the number of characters.
     head      Peak at the beginning of a text file with head. head -n 4 will show the first 4.
     tail      Peak at the beginning of a text file with tail. tail -n 4 will show the last 4.
-    less      Scroll through a large text file with less.
+    less      Scroll through a large text file with less. Use / to search for entries and 
+              "n"/Shift+n to jump to the next/last result. Type q to get back to the prompt.
+              Use b to go to the next page.
     nano      nano is simple text editor. Directions how to use it are shown when opened.
+    grep      search for stuff (for example in text files: grep "[what you search]" test.txt)
+    egrep     same but with more abilities
     
     Move, Copy, Remove
     ==================
@@ -45,5 +49,22 @@ Summary
               --> mv test.txt ../ OR try the absolute path: mv test.txt ~/FolderName/SubFolder/  
               For example, you have Home/Documents/text.txt and you are standing on Documents (it's your working directory)
               So you do: mv text.txt ../ will move the file to the home folder.
+    mv x*     move all things that start with x (e.g. mv 2017-* 2017/ --> moves all photos from 2017 in the folder 2017)
     cp        can copy files or folders.
     rm        You should try to avoid using rm which permanently removes files or folders.
+
+    Self Help
+    =========
+    man       Shows the documentation of every command. For example: man ls
+              Use / to search for entries and "n"/Shift+n to jump to the next/last result. Type q to get back to the prompt.
+    apropos   If you can’t think of the name of a command use apropos to search for a word associated with that command.
+              type apropos [search term e.g. "editor"] into the command line which will print a list of results
+              
+    cool stuff
+    ==========
+    cal/ncal  shows a calendar (two different formats)
+    calendar  shows quite random entries for the next days ^^
+    
+             
+             
+             
