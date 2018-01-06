@@ -59,6 +59,19 @@ Summary
     apropos   If you can’t think of the name of a command use apropos to search for a word associated with that command.
               type apropos [search term e.g. "editor"] into the command line which will print a list of results
               
+    Metacharacters
+    ==============
+    *         represents any to n characters    a*e --> age, ate, ape, apetite, anemone...
+    .         represents any character          a.e --> age, ate, ape...
+    +         is a quantifier which represents one or more occurrences of the preceeding expression. 
+              For example the regular expression “s+as” means: one or more “s” followed by “as”.
+    {}        to specify an exact number of occurrences of an expression. "s{2}" = exactly two “s”, s{2,3}=two or three
+    "( )"     capturing group. combined with {} --> (iss){2} will show Mississippi
+              "(i.{2}){3}" do strange searches ^^ means: three occurrences of an “i” followed by two of any character. Aha ^^
+    \w        The \w metacharacter corresponds to all “word” characters
+    \d        The \d metacharacter corresponds to all “number” characters
+    \s        The \s metacharacter corresponds to all “space” characters
+    
     cool stuff
     ==========
     cal/ncal  shows a calendar (two different formats)
