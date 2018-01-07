@@ -65,6 +65,7 @@ Summary
     egrep     same but with more abilities
     find      find can be used to search for the names of files in a directory.
     -name     add after "find" to search for a file name (find . -name "states.txt")
+    histroy   shows all commands used. They are saved here: ~/.bash_history (searchable with egrep)
     
   
   Metacharacters
