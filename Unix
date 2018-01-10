@@ -19,6 +19,7 @@ Summary
     pwd       The pwd command will print the working directory.
     ls        The ls command will list files and folders in a directory. You can use * to list (e.g. *.jpg, *DSC* or 2017*)
     -i        makes everything non-case-sensitive
+    alias     set shorter names for commands you use often. Can be written down in ~/.bash_profile (must be run before valid)
     
     Create, change or show folders and files
     ==========================
@@ -68,7 +69,7 @@ Summary
     histroy   shows all commands used. They are saved here: ~/.bash_history (searchable with egrep)
     
   
-  Metacharacters
+    Metacharacters
     ==============
     *         represents 0 to n characters      a*e --> age, ate, ape, apetite, anemone...
     .         represents any character          a.e --> age, ate, ape...
