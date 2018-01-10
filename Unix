@@ -123,9 +123,19 @@ Summary
     it allows to automatically rebuild files that depend on other files
     makefiles are text files that contain a list of rules.
     1) create makefile: nano makefile
-    2) entry in the makefile: draft_journal_entry.txt:
-                                touch draft_journal_entry.txt
+    2) entry in the makefile: [target]: [dependencies...]    e.g.   draft_journal_entry.txt: toc.txt
+                                [commands...]                           touch draft_journal_entry.txt
                               ^ Tab here is important!  
-             
-             
+                              --> "make [target]" will execute rule  --> "make draft_journal_entry.txt" will create said file
+    3) rule will be executed only if dependencies or related files have changed
+    4) create a readme.txt and update the number of entries found in a different file (here toc.txt):
+            readme.txt: toc.txt
+                echo "This journal contains the following number of entries:" > readme.txt   |creates file and first line
+                wc -l toc.txt | egrep -o "[0-9]+" >> readme.txt                              |adds lines in toc.txt
+                    ^only number       ^omitts file name
+                    of occurences
+    5) to run all commands under make, add first line to makefile: all: NameOfAll.txt NameOfOther.txt
+    6) to delete created files add rule: clean:
+                                            rm filename.txt
+                                            rm filename.txt
              
