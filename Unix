@@ -19,7 +19,9 @@ Summary
     pwd       The pwd command will print the working directory.
     ls        The ls command will list files and folders in a directory. You can use * to list (e.g. *.jpg, *DSC* or 2017*)
     -i        makes everything non-case-sensitive
-    alias     set shorter names for commands you use often. Can be written down in ~/.bash_profile (must be run before valid)
+    alias     set shorter names for commands you use often. Can be written down in ~/.bash_profile
+              alias docs='cd ~/Documents' --> source ~/.bash_profile will run and make it valid
+    |         "pipe": takes output from first command as input of second
     
     Create, change or show folders and files
     ==========================
@@ -66,7 +68,8 @@ Summary
     egrep     same but with more abilities
     find      find can be used to search for the names of files in a directory.
     -name     add after "find" to search for a file name (find . -name "states.txt")
-    histroy   shows all commands used. They are saved here: ~/.bash_history (searchable with egrep)
+    histroy   shows all commands used sice we opened the terminal. 
+    bash_hist They are saved here: ~/.bash_history (searchable with egrep)
     
   
     Metacharacters
@@ -117,6 +120,13 @@ Summary
     ==========
     cal/ncal  shows a calendar (two different formats)
     calendar  shows quite random entries for the next days ^^
+    
+    compare files
+    =============
+    diff      shows the differences between two files
+    sdiff     shows two files side by side with the differences marked
+    md5       will create a md5 hash (unique to the file so you can compare them)
+    shasum    will create a SHA-1 hash
     
     Make
     ====
