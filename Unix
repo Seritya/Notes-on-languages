@@ -94,21 +94,38 @@ Summary
     \S        Brings everything containing non-space characters (even if it also contains space characters)
     \n        Newline
     
+    \*        use "\" to tell Unix that you are actually searching for */+/. etc. as they are also metacharacters
+    
     [ ]       Create specific character sets using square brackets ([ ]) including the characters we wish to match
     [^ ]      create a regular expression for the compliment of a set by including a caret (^) in the beginning of a set
     [a-d]     includes a,b,c,d. Two ranges: [e-qE-Q]
     
+    Flags
+    =====
+    Do different things in different comands. Use "man" for help (see "Self Help" above)
+    -l        "line" with wc (shows number of lines/entries), "list" with cd
     -v        Invert-match egrep -v "\w" will show you everything except what you're searching for
     -i        non-case-sensitive
     -n        displays the line number the occurence is on in the file
-    
-    \*        use "\" to tell Unix that you are actually searching for */+/. etc. as they are also metacharacters
+    -i        makes everything non-case-sensitive
+    -o        with egrep: shows not the whole entry with the matching letter but only the letter (Alabama --> a)
+    -name     add after "find" to search for a file name (find . -name "states.txt")
+        
     
     cool stuff
     ==========
     cal/ncal  shows a calendar (two different formats)
     calendar  shows quite random entries for the next days ^^
     
+    Make
+    ====
+    With make you create a file that contains information about relationships between files and programs
+    it allows to automatically rebuild files that depend on other files
+    makefiles are text files that contain a list of rules.
+    1) create makefile: nano makefile
+    2) entry in the makefile: draft_journal_entry.txt:
+                                touch draft_journal_entry.txt
+                              ^ Tab here is important!  
              
              
              
