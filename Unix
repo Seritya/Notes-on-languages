@@ -149,4 +149,44 @@ Summary
     6) to delete created files add rule: clean:
                                             rm filename.txt
                                             rm filename.txt
-             
+    
+    Bash
+    ====
+    # makes lines comments
+    bash filename.sh runs the file
+    File is run from first line to last.
+    
+        Variables
+        ---------
+        Variable should be lower case, words separated by _ else just alphanumeric
+        assign variables: chapter_number=5
+                          chapter_name="Beginnings"
+        echo    $chapter_number will give back the value of the variable
+                Output of variable inside a string: echo "I went to school in $the_empire_state."
+        expr    for calculations (see below)
+        let     You can modify the value of a variable using arithmetic operators by using the let command:
+                let chapter_number=$chapter_number+1
+                echo $chapter_number
+        Store   result of a command line inside a variable: math_lines=$(cat math.sh | wc -l)
+                variable_name=$(command | other command)
+        read    create variables with read
+        
+        $@  all argumentes
+        $1  first argument          --> bash red [blue] will give out $@=red [blue], $1=red, $2=[blue] $#=1[2]
+        $2  second argument
+        $#  total number of arguments
+        
+  
+    Maths
+    =====
+    expr    starts line of simple maths commands (expr 2 * 3)
+    + -     work as used to
+    \*      * has to be excaped as it's a meta character
+    /       divides but only into whole numbers 7 / 3 = 2
+    %       shows rest of above division
+    For more complex math use echo and a pipe to bc (bench calculator): echo "22 / 7" | bc -l
+    To calculate, enter in a file with .sh ending, enter #!/usr/bin/env bash as top line, # File: bigmath.sh second line
+            then run file (bash filename.sh)
+            
+    
+    
