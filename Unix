@@ -227,30 +227,61 @@ Summary
             
             echo "End program"                
         
-        example with everything:    if [[ $1 -gt 3 ]] && [[ $1 -lt 7 ]]
-                                    then
-                                        echo "$1 is between 3 and 7"
-                                    elif [[ $1 =~ "Jeff" ]] || [[ $1 =~ "Roger" ]] || [[ $1 =~ "Brian" ]]
-                                    then
-                                        echo "$1 works in the Data Science Lab"
-                                    else
-                                        echo "You entered: $1, not what I was looking for."
-                                    fi
-      gerade Zahl
-      odd=$(echo "$1 % 2" | bc)
-
-if [[ $odd -eq 0 ]]
-then
-  status="even"
-else
-  status="odd"
-fi
+        example with everything
+        -----------------------
+        if [[ $1 -gt 3 ]] && [[ $1 -lt 7 ]]
+        then
+          echo "$1 is between 3 and 7"
+        elif [[ $1 =~ "Jeff" ]] || [[ $1 =~ "Roger" ]] || [[ $1 =~ "Brian" ]]
+        then
+          echo "$1 works in the Data Science Lab"
+        else
+          echo "You entered: $1, not what I was looking for."
+        fi
+        
+        Even/odd
+        --------
+        odd=$(echo "$1 % 2" | bc)
+        if [[ $odd -eq 0 ]]
+        then
+            status="even"
+        else
+            status="odd"
+        fi
       
       
     Arrays
     ======
-    
+    Arrays are ORDERED lists, stored in a variable. Starting with 0.
+    var=()              fill list
+    var[4]=xy           change specific entry in the list
+    var+=(xy zx)        add entries to the end of the list
+    echo ${var[0]}      recall specific number of the list
+    echo ${var[*]}      recall all
+    echo ${var[*]:5:3}  start with 6th entry, show next 3
+    echo ${#plagues[*]} show how many entries there are
+
+    Brace expansion
+    ===============
+    echo {0..9}         0,1,2,3,4,5,6,7,8,9
+    echo {a..e}         a,b,c,d,e
+    echo a{0..4}        a0,a1,a2,a3,a4
+    echo b{0..4}c       b0c,b1c,b2c,b3c, b4c
+    echo {1..3}{A..C}   1A 1B 1C 2A 2B 2C 3A 3B 3C
+    echo {{1..3},{a..c}} 1,2,3,a,b,c
+    echo {Who,How}?     Who? How?
+    eval echo {$1..$2}  start and end by variables
+    eval touch {1..20}.txt   create files
   
+    Loops
+    =====
+    FOR     [variable name] in [sequence] followed by do on the next line
+    echo "Before Loop"
+    for i in {1..3}
+    do
+     echo "i is equal to $i"
+    done
+    echo "After Loop"
   
     Maths
     =====
