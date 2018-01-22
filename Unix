@@ -167,15 +167,90 @@ Summary
         let     You can modify the value of a variable using arithmetic operators by using the let command:
                 let chapter_number=$chapter_number+1
                 echo $chapter_number
-        Store   result of a command line inside a variable: math_lines=$(cat math.sh | wc -l)
+        $()     Store result of a command line inside a variable: math_lines=$(cat math.sh | wc -l)
                 variable_name=$(command | other command)
-        read    create variables with read
+        read    create variables with read:
+                echo "Type in a string and then press Enter:"
+                read response
+                echo "You entered: $response"
         
         $@  all argumentes
         $1  first argument          --> bash red [blue] will give out $@=red [blue], $1=red, $2=[blue] $#=1[2]
         $2  second argument
         $#  total number of arguments
         
+        true/false/and
+        --------------
+        $?      exit status
+        true    will output exit status 0
+        false   will output exit status 1
+        &&      and. Will only run program on the right if program on the left is true.
+        ||      or. will run if the program on the lef that a non-0 exit status
+        [[]]    conditions. [[ 4 -gt 3 ]] (-gt = greater as) --> echo $? --> 0 (true)
+                --> [[ 4 -gt 3 ]] && echo t || echo f (4 is greater than 3, so it will have exitstatus of 0, will go through &&, will print t)
+        
+        logical operators
+        -----------------
+        =~	    regex. Matches Regular Expression	[[ $consonants =~ [aeiou] ]]
+        =	    String Equal To	[[ $password = "pegasus" ]]
+        !=	    String Not Equal To	[[ $fruit != "banana" ]]
+        !	    Not	[[ ! "apple" =~ ^b ]]
+
+                    
+        logical flags
+        -------------
+        -gt	    Greater Than	[[ $planets -gt 8 ]]
+        -ge	    Greater Than or Equal To	[[ $votes -ge 270 ]]
+        -eq	    Equal	[[ $fingers -eq 10 ]]
+        -ne	    Not Equal	[[ $pages -ne 0 ]]
+        -le	    Less Than or Equal To	[[ $candles -le 9 ]]
+        -lt	    Less Than	[[ $wives -lt 2 ]]
+        -e	    A File Exists	[[ -e $taxes_2016 ]]
+        -d	    A Directory Exists	[[ -d $photos ]]
+        -z	    Length of String is Zero	[[ -z $name ]]
+        -n	    Length of String is Non-Zero	[[ -n $name ]]
+        
+        if/then                            else                         elseif (elif)
+        -------                            ----                         -------------
+       
+            echo "Start program"
+            
+            if [[ $1 -eq 4 ]]              if [[ $1 -eq 4 ]]            if [[ $1 -eq 4 ]]
+            then                           then                         then
+                echo "You entered $1"          echo "You entered $1"       echo "You entered $1"
+            .                              .                            elif [[ $1 -gt 3 ]]
+            .                              .                            then
+            .                              .                               echo "$1 is a great number"
+            .                              else                         else
+            .                              echo "Wrong number."         echo "Wrong number."
+            fi                             fi                           fi
+            
+            echo "End program"                
+        
+        example with everything:    if [[ $1 -gt 3 ]] && [[ $1 -lt 7 ]]
+                                    then
+                                        echo "$1 is between 3 and 7"
+                                    elif [[ $1 =~ "Jeff" ]] || [[ $1 =~ "Roger" ]] || [[ $1 =~ "Brian" ]]
+                                    then
+                                        echo "$1 works in the Data Science Lab"
+                                    else
+                                        echo "You entered: $1, not what I was looking for."
+                                    fi
+      gerade Zahl
+      odd=$(echo "$1 % 2" | bc)
+
+if [[ $odd -eq 0 ]]
+then
+  status="even"
+else
+  status="odd"
+fi
+      
+      
+    Arrays
+    ======
+    
+  
   
     Maths
     =====
