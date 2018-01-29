@@ -70,6 +70,8 @@ Summary
     -name     add after "find" to search for a file name (find . -name "states.txt")
     histroy   shows all commands used sice we opened the terminal. 
     bash_hist They are saved here: ~/.bash_history (searchable with egrep)
+           
+    Just numer of lines      wc -l guessinggame.sh | egrep -o "[0-9]+" >> README.md
     
   
     Metacharacters
